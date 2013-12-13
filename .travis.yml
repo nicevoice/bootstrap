@@ -4,9 +4,10 @@ node_js:
 before_install:
   - sudo pip install --use-mirrors -r ./test-infra/requirements.txt
 install:
-  - gem install jekyll
   - npm install -g grunt-cli
   - ./test-infra/node_modules_cache.py download || npm install
+script:
+  - echo hello
 after_script:
   - ./test-infra/node_modules_cache.py upload
 env:
